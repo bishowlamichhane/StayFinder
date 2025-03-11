@@ -1,0 +1,15 @@
+/* Home.css */
+.homeContainer {
+   
+    max-width: 100vw;
+
+
+
+}
+
+.hotelGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+
+}

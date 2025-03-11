@@ -1,0 +1,35 @@
+.heroContainer {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+.heroContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    filter: blur(2px); /* Apply the blur to the background image */
+    z-index: -1; /* Keeps the background image behind the content */
+}
+
+.heroContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 800px;
+    z-index: 1; /* Ensures the content is above the background */
+}
