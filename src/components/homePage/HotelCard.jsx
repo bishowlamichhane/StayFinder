@@ -15,7 +15,7 @@ const HotelCard = ({ hotel }) => {
       </header>
       <section>
         <h3>{hotel.name}</h3>
-        <p>{hotel.rating}</p>
+        <p className="hotelRating">{hotel.rating}</p>
         <span>
           {hotel.city.name}, {hotel.city.country}
         </span>

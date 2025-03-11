@@ -6,14 +6,14 @@ import Hero from "../components/homePage/Hero";
 
 const Home = () => {
   const hotels = useSelector((state) => state.hotels);
-
+  const id = "hotels";
   console.log(hotels);
 
   return (
     <div className={styles.homeContainer}>
-      <Header />
+      <Header ids={id} />
       <Hero />
-      <div className={styles.hotelGrid}>
+      <div className={styles.hotelGrid} id={id}>
         {hotels?.map((hotelInfo) => (
           <HotelCard key={hotelInfo.id} hotel={hotelInfo} />
         ))}

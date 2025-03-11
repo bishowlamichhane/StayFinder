@@ -2,7 +2,11 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .heroContainer::before {
@@ -14,10 +18,11 @@
     height: 100%;
     background-image: url('../images/bg.jpg');
     background-size: cover;
-    background-position: left;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: blur(2px); /* Apply the blur to the background image */
-    z-index: -1; /* Keeps the background image behind the content */
+    filter: blur(3px);
+    z-index: -1;
+    opacity: 0.8; /* Slight transparency for a softer effect */
 }
 
 .heroContent {
@@ -29,7 +34,77 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    width: 800px;
-    z-index: 1; /* Ensures the content is above the background */
+    gap: 40px;
+    width: 100%;
+    max-width: 900px;
+    z-index: 1;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcomeText {
+    text-align: center;
+    line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Blue gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientText 3s ease-in-out infinite;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.searchContainer {
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.searchInput {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    padding-left: 20px;
+    padding-right: 120px;
+    border: 1px solid black;
+    border-radius: 9999px; /* Fully rounded */
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.searchInput:focus {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.searchButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 9999px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #005bb5;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
