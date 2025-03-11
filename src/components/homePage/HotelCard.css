@@ -29,7 +29,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-p {
+.hotelRating {
     color: #ffcc00; /* Adjust this for a star rating color */
     font-weight: bold;
 }

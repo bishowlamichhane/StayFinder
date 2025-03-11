@@ -1,16 +1,22 @@
 import React from "react";
 import styles from "./Hero.module.css";
+
 const Hero = () => {
   return (
     <div className={styles.heroContainer}>
       <div className={styles.heroContent}>
-        <div className="text-5xl text-blue-800 font-bold ">Welcome</div>
-        <div className="w-full  h-12">
+        <div
+          className={`${styles.welcomeText} text-6xl font-extrabold tracking-tight`}
+        >
+          Book your stay now
+        </div>
+        <div className={`${styles.searchContainer} w-full h-14 relative`}>
           <input
             type="text"
             placeholder="Search hotels and lodges"
-            className="border border-1-solid w-full h-full px-2 rounded-4xl"
+            className={`${styles.searchInput} w-full h-full px-4 py-2 rounded-full shadow-md `}
           />
+          <button className={styles.searchButton}>Search</button>
         </div>
       </div>
     </div>
